@@ -1,0 +1,35 @@
+    • Once you have bot setup ready and tested the bot at command line.
+    • Following steps have to be completed in order to integrate the bot with a web app.
+    • Open Spyder and edit the Credentials.yml file
+    • Add below code snippet in Credentials.yml and save it, this enables the socket connections to web app.
+        ◦ socketio: 
+          user_message_evt: user_uttered 
+          bot_message_evt: bot_uttered 
+          session_persistence: true
+    • Add below code snippet in the UI page to show the chat bot.
+      
+      <div id="webchat"/>
+<script src="https://storage.googleapis.com/mrbot-cdn/webchat-latest.js"></script>
+// Or you can replace latest with a specific version
+<script>
+  WebChat.default.init({
+    selector: "#webchat",
+    initPayload: "/get_started",
+    customData: {"language": "en"}, // arbitrary custom data. Stay minimal as this will be added to the socket
+    socketUrl: "http://localhost:5500",  
+    socketPath: "/socket.io/",
+    title: "Title",
+    subtitle: "Subtitle",
+  })
+</script>
+    • Now open anaconda or Terminal and activate the bot using ‘Conda activate <yourbotname>’
+    • Once the bot activated, run the below command in Anaconda or Terminal. This command starts the rasa server and web app connects through socket.
+        ◦ rasa run -m models --enable-api --cors "*" --debug 
+    • DONOT Close the command window, it runs the rasa server neeeded for UI bot.
+      
+    • This is it, your bot should be visible on UI and you can start chatting with the bot.
+      
+Challegnes at this point :
+      
+    • The web UI bot storing the chat history even though the server is restarted, we are checking to clear the cache or work on session management.
+      
