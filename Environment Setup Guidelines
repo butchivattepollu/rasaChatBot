@@ -1,0 +1,31 @@
+RASA Setup
+
+Environment Setup:
+
+    • Download and install Anaconda from Anaconda.com/Products/ Version 3.7.6
+    • Install Linux/windows versions as needed.
+    • Open Terminal/Anaconda Prompt
+    • Type below commands in sequence to setup the Rasa
+    • Navigate to path where files needs to be installed
+    • conda create –-name <baseprojectname> python==3.7.6
+    • conda install ujson
+    • conda install tensorflow
+    • pip install rasa
+    • rasa init
+Note:  Anaconda installation includes the spyder package.
+
+Activating Rasa bot:
+
+    • Open Terminal/Anaconda promt
+    • Type below command to activate bot
+    • conda activate <baseprojectname>
+    • Navigate to the project files created for the bot (in step rasa init)
+    • type ‘rasa shell’ to start chat with the bot.
+    • ‘/stop’ – to exit the bot chat
+
+Launching Syper: Spyder IDE is used for coding and enhancing the projects
+
+    • Open Terminal/Anaconda Prompt
+    • Type ‘spyder’ – This command will launch the spyder ide tool
+    • Navigate to files (created in step rasa init) in the objects tab
+
