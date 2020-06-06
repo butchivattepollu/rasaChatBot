@@ -1,0 +1,16 @@
+Steps for Payload Buttons(question options)
+    • First we need to add button where we want to show response along with options which user has to select.
+    • Syntax to be added in Domain.yml (Reponse)
+      buttons:
+      - title: <title Name>
+        payload: </IntentName>
+
+Example
+      
+Domain.yml
+
+Nlu.md
+
+Stories.md
+
+Domain.yml
